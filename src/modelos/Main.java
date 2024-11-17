@@ -23,6 +23,7 @@ public class Main {
     public void mostrarVentana() {
         vPrincipal.setLocationRelativeTo(null);
         vPrincipal.setVisible(true);
+
     }
 
     public static void main(String[] args) {

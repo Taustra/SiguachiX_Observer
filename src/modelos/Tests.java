@@ -42,7 +42,7 @@ public class Tests {
             } else {
                 ObservadorConcreto pp1 = new ObservadorConcreto(cod, nombre);
                 resgistrarPersonas(personas, pp1);
-                System.out.println("Persona no observadora registrada");
+                System.out.println("Persona no observadora registrada :)");
                 return pp1;
             }
         } else {
