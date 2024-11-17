@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import visual.Informacion;
+
 /**
  *
  * @author Xavier Siguachi
@@ -22,7 +23,8 @@ public class Tests {
     int x = 50;
     int y = 50;
 
-    // Metodos para registrar a las personas en distintas listas dependiendo de su estado (si|no)
+    // Metodos para registrar a las personas en distintas listas dependiendo de su
+    // estado (si|no)
     public void registrarObserver(Observer obs) {
         notificadorObservers.registrarObserver(obs);
     }
@@ -34,7 +36,7 @@ public class Tests {
             if (estado == "si") {
                 Observer p1 = new ObservadorConcreto(cod, nombre);
                 registrarObserver(p1);
-                System.out.println("Persona observadora registrada");
+                System.out.println("Persona observadora registrada :)");
                 return p1;
 
             } else {
@@ -49,17 +51,17 @@ public class Tests {
 
     }
 
-    //metodo que solo dispone los datos en el cuadro
+    // metodo que solo dispone los datos en el cuadro
     public Informacion crearPanel(Observer o) {
 
         panelInf = new Informacion();
-        //captura de información
+        // captura de información
 
         int codigo = Integer.parseInt(Main.getvPrincipal().getTxtCodigo().getText());
 
         String nombre = Main.getvPrincipal().getTxtNombre().getText();
         String estado = (String) Main.getvPrincipal().getComboBoxEstado().getSelectedItem();
-        //Disponer los datos en el panel que contienen  información
+        // Disponer los datos en el panel que contienen información
         panelInf.getLabelCodigo().setText(String.valueOf(codigo));
         panelInf.getLabelNombre().setText(nombre);
         panelInf.getLabelSuscrito().setText(estado);
@@ -70,7 +72,7 @@ public class Tests {
         return panelInf;
     }
 
-    //metodo que muestra el cuadro con los datos
+    // metodo que muestra el cuadro con los datos
     public void mostrarPanel(Informacion panelInf) {
         panelesInformacion.add(panelInf);
         panelInf.setSize(550, 114);
@@ -83,8 +85,7 @@ public class Tests {
 
     }
 
-   
-    //metodo que nos sirve para buscar a una persona
+    // metodo que nos sirve para buscar a una persona
     public void recuperarDatos() {
 
         int cod = Integer.parseInt(Main.getvPrincipal().getTxtCodigo().getText());
@@ -116,7 +117,7 @@ public class Tests {
         return null;
     }
 
-    //metodo para actualizar el estado suscrito de una persona
+    // metodo para actualizar el estado suscrito de una persona
     public void actualizar(int codigo, String nuevoEstado) {
 
         if (nuevoEstado == "no") {
@@ -139,7 +140,7 @@ public class Tests {
         }
     }
 
-    //Metodo para notificar temperatura, pero también sirve para la sincronización
+    // Metodo para notificar temperatura, pero también sirve para la sincronización
     public void notificarObservadores(int valor) {
 
         notificadorObservers.notificarObserver(valor, panelesInformacion);
